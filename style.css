@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+body {
+    font-family: Helvetica Neue, Arial;
+    font-size: 18px;
+}
+
+h1, h2 {
+    color: rgba(2, 139, 12, 0.95);    
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+/*
+p {
+    text-align: justify; 
+}
+*/
+
+.main-text {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+/*
+#author-text {
+    font-size: : 22px;
+}
+*/
+
+.author-text {
+    font-size: : 22px;
+    
+    /*
+    styling the author text in middle 
+    we need to add margin top and left
+    */
+    float: left;
+    margin-top: 30px;
+    margin-left: 10px; 
+}
+
+.container {
+    width: 1140px;
+    /* 
+    align container to center 
+    left and right margin are adjusted
+    according to the context of the element
+    which is browser in this case.
+    if you adjust broser now, the content 
+    will stay in center.
+    */
+/*
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+*/ 
+    margin: 20px auto 0 auto
+}
+
+.blog-post {
+/*    background-color: #0000ff;*/
+    /* first blog width to be 75% of contaniner */
+    width: 75%;
+    /* 
+     To put the green box beside the blue box
+     wanted for layout, we use a property called 
+     float.
+     With this an element can be pushed to the left or right.
+     Allowing other elements to wrap around it.
+    */
+    float: left;
+    padding-right: 30px;
+    position: relative;
+}
+.other-posts {
+    /* second blog width to be 25% of contaniner */
+/*    background-color: #00ff00;*/
+    width: 25%;
+    
+    /* 
+     To put the green box beside the blue box
+     wanted for layout, we use a property called 
+     float.
+     With this an element can be pushed to the left or right.
+     Allowing other elements to wrap around it.
+    */
+    float: left;
+}
+
+/* 
+As a side effect of float, the remaining elemenent
+after the last one also gets wrapped, to undo it
+we use a property called clear
+refer to .clearfix:after on top
+*/
+
+
+
+.author-box {
+/*    background-color: #ffff00;
+    was added initially to detect borders and diffrentiate
+    margin, paddding etc.
+    */
+    
+    /* to speparate the container from above container
+      with a line we order border*/
+    border-top: 1px solid #acacac;
+    padding-top: 20px;
+}
+
+.other {
+    margin-bottom: 40px;
+}
+
+/**
+ select img under author box
+*/
+.author-box img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    float: left;
+}
+
+.blog-post img {
+    height: 150px;
+    
+    /* aspect ratio */
+    width: auto;
+}
+
+/** 
+ Absolute vs relative positioning with date class
+ note for date .blog-post is the parent 
+ so we make its positioning relative
+and the child can then be absolute in the parent.
+*/
+.date {
+    position: absolute;
+    top: 0;
+    right: 0;
+    top: 30px;
+    right: 10px
+}
+
+
+/** Notes:
+    selectors followed by declaration in paranthesis
+    Same class can be attributed to many html elements
+    id can be used only once inside html doc, i.e. to one element.
+    id not good for styling use, classnames
+    CSS Box Model - 
+    <-margin-><-border-><-padding-><-content->
+              <-------width/height----------->
+
+    margin -> white space between boxes.
+
+    box-sizing: border-box  - it sets box width and height for entire box rather than content only
+
+    why block ?
+    in html there are block elements and inline elements.
+    
+    block elements - 
+        take full width of browser
+        enforcelibe breaks
+        Example - headings and paragraphs
+
+    inline elements - 
+        img, links, strong, em are inline elements. 
+        neither set their height or width.
+
+    div - container/divider 
+*/
